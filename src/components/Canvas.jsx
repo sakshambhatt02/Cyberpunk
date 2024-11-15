@@ -61,7 +61,7 @@ export default function Canvas() {
         let model;
 
         loader.load(
-          "/assets/DamagedHelmet.gltf",
+          `${process.env.PUBLIC_URL}/assets/DamagedHelmet.gltf`,
           (gltf) => {
             model = gltf.scene;
             scene.add(model);
@@ -69,9 +69,7 @@ export default function Canvas() {
             model.scale.set(2, 2, 2);
           },
           (progress) => {
-            console.log(
-              ((progress.loaded / progress.total) * 100) + "% loaded"
-            );
+            console.log((progress.loaded / progress.total) * 100 + "% loaded");
           },
           (error) => {
             console.error("An error happened", error);
@@ -133,7 +131,7 @@ export default function Canvas() {
   return (
     <div className="w-full h-screen overflow-hidden">
       <img
-        src="/assets/cyberpunk.png"
+        src={`${process.env.PUBLIC_URL}/assets/cyberpunk.png`}
         alt=""
         className="absolute top-1/2 left-1/2 w-1/2 -translate-x-1/2 -translate-y-1/2 mix-blend-screen filter saturate-150 contrast-125"
       />
