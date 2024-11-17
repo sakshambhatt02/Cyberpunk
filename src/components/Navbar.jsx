@@ -28,7 +28,7 @@ export default function Navbar() {
         }`}
       >
         <img
-          src="assets/cyberpunk.png"
+          src={`${process.env.PUBLIC_URL}/assets/cyberpunk.png`}
           alt="Cyberpunk Logo"
           className="w-48 mix-blend-screen filter saturate-200 contrast-150 hover:scale-105 transition-transform duration-300"
         />
